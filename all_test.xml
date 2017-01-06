@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--<suite name='Suite1' parallel="tests" thread-count="5">-->
+    <suite name='Suite1' parallel="tests" thread-count="5">
+    <!--王杰机器，红米note-->
+    <test name="yn-cs-007">
+        <parameter name="ip" value="127.0.0.1"/>
+        <parameter name="port" value="4723"/>
+        <parameter name="udid" value="7e576a19"/>
+        <parameter name="filePath"
+                   value="/Users/mac/01_appium_workspace/appium_client/test_data/testdata/autorun/android/driver/XiaoMi/1ApiPrepareData"/>
+        <classes>
+            <class name="com.yunniao.appiumtest.TestNGCaseNew"/>
+        </classes>
+    </test>
+    <!--王梅芳机器，红米-->
+
+    <test name="wangmeifang">
+        <parameter name="ip" value="127.0.0.1"/>
+        <parameter name="port" value="4725"/>
+        <parameter name="udid" value="ad879900"/>
+        <parameter name="filePath"
+                   value="/Users/melinda/test/beeper_test/appium_client/testdata/autorun/android/driver/XiaoMi/1ApiPrepareData"/>
+        <classes>
+            <class name="com.yunniao.appiumtest.TestNGCaseNew"/>
+        </classes>
+    </test>
+<!--    <test name="nana">
+        <parameter name="ip" value="127.0.0.1"/>
+        <parameter name="port" value="4726"/>
+        <parameter name="udid" value="e3ac409e"/>
+        <parameter name="filePath"
+                   value="/Users/mac/01_appium_workspace/appium_client/test_data/testdata/autorun/android/driver/XiaoMi/1ApiPrepareData"/>
+        <classes>
+            <class name="com.yunniao.appiumtest.TestNGCaseNew"/>
+        </classes>
+    </test>-->
+
+<!--    <test name="wj_self">
+        <parameter name="ip" value="127.0.0.1"/>
+        <parameter name="port" value="4727"/>
+        <parameter name="udid" value="NF6SQC5HBENJBAQK"/>
+        <parameter name="filePath"
+                   value="/Users/mac/01_appium_workspace/appium_client/test_data/testdata/autorun/android/driver/XiaoMi/1ApiPrepareData"/>
+        <classes>
+            <class name="com.yunniao.appiumtest.TestNGCaseNew"/>
+        </classes>
+    </test>-->
+<!--    <test name="wj_self">
+        <parameter name="ip" value="127.0.0.1"/>
+        <parameter name="port" value="4728"/>
+        <parameter name="udid" value="a1c615ef073ec5baa95f2a36b9a9bb9c56a35d1c"/>
+        <parameter name="filePath"
+                   value="/Users/mac/01_appium_workspace/appium_client/appium_client/test_data/testdata/autorun/ios/driver/ApiPrepareData/2YunLi"/>
+        <classes>
+            <class name="com.yunniao.appiumtest.TestNGCaseNewIOS"/>
+        </classes>
+    </test>-->
+
+
+
+</suite>
