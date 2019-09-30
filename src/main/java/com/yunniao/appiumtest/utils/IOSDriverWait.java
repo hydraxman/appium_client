@@ -26,7 +26,7 @@ public class IOSDriverWait extends FluentWait<IOSDriver> {
      * the 'until' condition, and immediately propagate all others.  You can add more to the ignore
      * list by calling ignoring(exceptions to add).
      *
-     * @param driver The WebDriver instance to pass to the expected conditions
+     * @param driver           The WebDriver instance to pass to the expected conditions
      * @param timeOutInSeconds The timeout in seconds when an expectation is called
      * @see IOSDriverWait#ignoring(java.lang.Class)
      */
@@ -39,9 +39,9 @@ public class IOSDriverWait extends FluentWait<IOSDriver> {
      * the 'until' condition, and immediately propagate all others.  You can add more to the ignore
      * list by calling ignoring(exceptions to add).
      *
-     * @param driver The WebDriver instance to pass to the expected conditions
+     * @param driver           The WebDriver instance to pass to the expected conditions
      * @param timeOutInSeconds The timeout in seconds when an expectation is called
-     * @param sleepInMillis The duration in milliseconds to sleep between polls.
+     * @param sleepInMillis    The duration in milliseconds to sleep between polls.
      * @see IOSDriverWait#ignoring(java.lang.Class)
      */
     public IOSDriverWait(IOSDriver driver, long timeOutInSeconds, long sleepInMillis) {
@@ -49,11 +49,11 @@ public class IOSDriverWait extends FluentWait<IOSDriver> {
     }
 
     /**
-     * @param driver The WebDriver instance to pass to the expected conditions
-     * @param clock The clock to use when measuring the timeout
-     * @param sleeper Object used to make the current thread go to sleep.
+     * @param driver           The WebDriver instance to pass to the expected conditions
+     * @param clock            The clock to use when measuring the timeout
+     * @param sleeper          Object used to make the current thread go to sleep.
      * @param timeOutInSeconds The timeout in seconds when an expectation is
-     * @param sleepTimeOut The timeout used whilst sleeping. Defaults to 500ms called.
+     * @param sleepTimeOut     The timeout used whilst sleeping. Defaults to 500ms called.
      */
     public IOSDriverWait(IOSDriver driver, Clock clock, Sleeper sleeper, long timeOutInSeconds,
                          long sleepTimeOut) {

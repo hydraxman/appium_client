@@ -21,6 +21,7 @@ package com.yunniao.appiumtest.ui;
 
 /**
  * some handy constants that can be used throughout the program
+ *
  * @author Arash Payan (http://www.arashpayan.com)
  */
 public class Constants {

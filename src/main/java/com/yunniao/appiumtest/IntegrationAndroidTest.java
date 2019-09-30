@@ -31,7 +31,7 @@ public class IntegrationAndroidTest extends IntegrationTest<AndroidElement, Andr
     @Override
     public void stopDriver(boolean stopAll) throws IOException {
         if (driver != null) {
-            if(isQuit != 2) {
+            if (isQuit != 2) {
                 driver.quit();
                 LogUtil.i("quit app");
             } else {
@@ -115,7 +115,7 @@ public class IntegrationAndroidTest extends IntegrationTest<AndroidElement, Andr
         }
     }
 
-    public void setLogOut(String url) throws Exception{
+    public void setLogOut(String url) throws Exception {
         By by = Integration.getByXpath("//android.widget.Button[contains(@text,'登')]");
         boolean isPresent = Integration.isElementPresentAndroid(driver, by, Constants.WAIT_DURATION_DEFAULT);
         if (!isPresent) {

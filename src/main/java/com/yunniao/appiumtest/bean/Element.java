@@ -6,159 +6,160 @@ import java.util.ArrayList;
  * Created by MrBu on 2016/1/13.
  */
 public class Element<T extends Object> {
-	private String text;
-	private ArrayList<Action> actions;
-	private Verify verify;
-	private String className;
-	private T classIndex;
-	private String id;
-	private Element subElement;
-	private int textMatchType;
-	private int textType;
-	private String xPath;
-	private int numText;
-	private String desc;
-	private Element siblingElement;
-	private boolean ignoreElement = false;
-	private String attribute;
-	private String value;
-	private ArrayList<Var> vars;
+    private String text;
+    private ArrayList<Action> actions;
+    private Verify verify;
+    private String className;
+    private T classIndex;
+    private String id;
+    private Element subElement;
+    private int textMatchType;
+    private int textType;
+    private String xPath;
+    private int numText;
+    private String desc;
+    private Element siblingElement;
+    private boolean ignoreElement = false;
+    private String attribute;
+    private String value;
+    private ArrayList<Var> vars;
 
-	public ArrayList<Var> getVars() {
-		return vars;
-	}
+    public Element() {
+    }
 
-	public void setVars(ArrayList<Var> vars) {
-		this.vars = vars;
-	}
+    public ArrayList<Var> getVars() {
+        return vars;
+    }
 
-	public String getAttribute() {
-		return attribute;
-	}
+    public void setVars(ArrayList<Var> vars) {
+        this.vars = vars;
+    }
 
-	public void setAttribute(String attribute) {
-		this.attribute = attribute;
-	}
+    public String getAttribute() {
+        return attribute;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    public String getValue() {
+        return value;
+    }
 
-	public boolean isIgnoreElement() {
-		return ignoreElement;
-	}
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-	public void setIgnoreElement(boolean ignoreElement) {
-		this.ignoreElement = ignoreElement;
-	}
+    public boolean isIgnoreElement() {
+        return ignoreElement;
+    }
 
-	public Element getSiblingElement() {
-		return siblingElement;
-	}
+    public void setIgnoreElement(boolean ignoreElement) {
+        this.ignoreElement = ignoreElement;
+    }
 
-	public void setSiblingElement(Element siblingElement) {
-		this.siblingElement = siblingElement;
-	}
+    public Element getSiblingElement() {
+        return siblingElement;
+    }
 
-	public String getDesc() {
-		return desc;
-	}
+    public void setSiblingElement(Element siblingElement) {
+        this.siblingElement = siblingElement;
+    }
 
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
+    public String getDesc() {
+        return desc;
+    }
 
-	public int getNumText() {
-		return numText;
-	}
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
-	public void setNumText(int numText) {
-		this.numText = numText;
-	}
+    public int getNumText() {
+        return numText;
+    }
 
-	public String getxPath() {
-		return xPath;
-	}
+    public void setNumText(int numText) {
+        this.numText = numText;
+    }
 
-	public void setxPath(String xPath) {
-		this.xPath = xPath;
-	}
+    public String getxPath() {
+        return xPath;
+    }
 
-	public int getTextType() {
-		return textType;
-	}
+    public void setxPath(String xPath) {
+        this.xPath = xPath;
+    }
 
-	public void setTextType(int textType) {
-		this.textType = textType;
-	}
+    public int getTextType() {
+        return textType;
+    }
 
-	public int getTextMatchType() {
-		return textMatchType;
-	}
+    public void setTextType(int textType) {
+        this.textType = textType;
+    }
 
-	public void setTextMatchType(int textMatchType) {
-		this.textMatchType = textMatchType;
-	}
+    public int getTextMatchType() {
+        return textMatchType;
+    }
 
-	public Element getSubElement() {
-		return subElement;
-	}
+    public void setTextMatchType(int textMatchType) {
+        this.textMatchType = textMatchType;
+    }
 
-	public void setSubElement(Element subElement) {
-		this.subElement = subElement;
-	}
+    public Element getSubElement() {
+        return subElement;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public void setSubElement(Element subElement) {
+        this.subElement = subElement;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
+    public String getText() {
+        return text;
+    }
 
-	public ArrayList<Action> getActions() {
-		return actions;
-	}
+    public void setText(String text) {
+        this.text = text;
+    }
 
-	public void setActions(ArrayList<Action> actions) {
-		this.actions = actions;
-	}
+    public ArrayList<Action> getActions() {
+        return actions;
+    }
 
-	public Verify getVerify() {
-		return verify;
-	}
+    public void setActions(ArrayList<Action> actions) {
+        this.actions = actions;
+    }
 
-	public void setVerify(Verify verify) {
-		this.verify = verify;
-	}
+    public Verify getVerify() {
+        return verify;
+    }
 
-	public String getClassName() {
-		return className;
-	}
+    public void setVerify(Verify verify) {
+        this.verify = verify;
+    }
 
-	public void setClassName(String className) {
-		this.className = className;
-	}
+    public String getClassName() {
+        return className;
+    }
 
-	public T getClassIndex() {
-		return classIndex;
-	}
+    public void setClassName(String className) {
+        this.className = className;
+    }
 
-	public void setClassIndex(T classIndex) {
-		this.classIndex = classIndex;
-	}
+    public T getClassIndex() {
+        return classIndex;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public void setClassIndex(T classIndex) {
+        this.classIndex = classIndex;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public Element(){}
+    public void setId(String id) {
+        this.id = id;
+    }
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Created by melinda on 1/11/16.
  */
-public class IntegrationApiTest extends IntegrationTest<IOSElement,IOSDriver<IOSElement>> {
+public class IntegrationApiTest extends IntegrationTest<IOSElement, IOSDriver<IOSElement>> {
 
     public IntegrationApiTest(TestCase testCase, String urlAddrLocal, String udid, Integer isQuit) {
         super(testCase, urlAddrLocal, udid, isQuit);
@@ -22,16 +22,24 @@ public class IntegrationApiTest extends IntegrationTest<IOSElement,IOSDriver<IOS
         super.stopDriver(stopAll);
     }
 
-    public void setup(boolean isInstall, boolean isLaunch, String pr, String os, String udid, String browserName) throws Exception {}
+    public void setup(boolean isInstall, boolean isLaunch, String pr, String os, String udid, String browserName) throws Exception {
+    }
 
-    public  void elementSearchWait(Element element, int duration) throws Exception{}
+    public void elementSearchWait(Element element, int duration) throws Exception {
+    }
 
-    public void setLogin(String url) throws Exception{}
-    public void setLogOut(String url) throws Exception{}
-    public void takeScreenShot(Integer type) throws Exception {}
+    public void setLogin(String url) throws Exception {
+    }
+
+    public void setLogOut(String url) throws Exception {
+    }
+
+    public void takeScreenShot(Integer type) throws Exception {
+    }
 
 
-    protected void setAction(Element element, Action action) throws Exception{}
+    protected void setAction(Element element, Action action) throws Exception {
+    }
 
 
 }

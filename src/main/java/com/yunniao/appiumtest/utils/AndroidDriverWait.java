@@ -1,6 +1,7 @@
 package com.yunniao.appiumtest.utils;
 
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,6 @@ import org.openqa.selenium.support.ui.Clock;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.SystemClock;
-
-import io.appium.java_client.android.AndroidDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,7 +26,7 @@ public class AndroidDriverWait extends FluentWait<AndroidDriver> {
      * the 'until' condition, and immediately propagate all others.  You can add more to the ignore
      * list by calling ignoring(exceptions to add).
      *
-     * @param driver The WebDriver instance to pass to the expected conditions
+     * @param driver           The WebDriver instance to pass to the expected conditions
      * @param timeOutInSeconds The timeout in seconds when an expectation is called
      * @see AndroidDriverWait#ignoring(java.lang.Class)
      */
@@ -40,9 +39,9 @@ public class AndroidDriverWait extends FluentWait<AndroidDriver> {
      * the 'until' condition, and immediately propagate all others.  You can add more to the ignore
      * list by calling ignoring(exceptions to add).
      *
-     * @param driver The WebDriver instance to pass to the expected conditions
+     * @param driver           The WebDriver instance to pass to the expected conditions
      * @param timeOutInSeconds The timeout in seconds when an expectation is called
-     * @param sleepInMillis The duration in milliseconds to sleep between polls.
+     * @param sleepInMillis    The duration in milliseconds to sleep between polls.
      * @see AndroidDriverWait#ignoring(java.lang.Class)
      */
     public AndroidDriverWait(AndroidDriver driver, long timeOutInSeconds, long sleepInMillis) {
@@ -50,11 +49,11 @@ public class AndroidDriverWait extends FluentWait<AndroidDriver> {
     }
 
     /**
-     * @param driver The WebDriver instance to pass to the expected conditions
-     * @param clock The clock to use when measuring the timeout
-     * @param sleeper Object used to make the current thread go to sleep.
+     * @param driver           The WebDriver instance to pass to the expected conditions
+     * @param clock            The clock to use when measuring the timeout
+     * @param sleeper          Object used to make the current thread go to sleep.
      * @param timeOutInSeconds The timeout in seconds when an expectation is
-     * @param sleepTimeOut The timeout used whilst sleeping. Defaults to 500ms called.
+     * @param sleepTimeOut     The timeout used whilst sleeping. Defaults to 500ms called.
      */
     public AndroidDriverWait(AndroidDriver driver, Clock clock, Sleeper sleeper, long timeOutInSeconds,
                              long sleepTimeOut) {

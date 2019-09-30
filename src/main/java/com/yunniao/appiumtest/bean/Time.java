@@ -1,7 +1,5 @@
 package com.yunniao.appiumtest.bean;
 
-import com.alibaba.fastjson.JSONObject;
-
 /**
  * Created by melinda on 3/14/16.
  */

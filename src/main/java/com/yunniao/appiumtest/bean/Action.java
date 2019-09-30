@@ -6,135 +6,124 @@ import java.util.ArrayList;
  * Created by MrBu on 2016/1/13.
  */
 public class Action {
-	private String text;
-	private String name;
-	private double startX;
-	private double startY;
-	private double endX;
-	private double endY;
-	private int duration;
-	private int keyCode;
-	private int elementIndex;
-	private int fingers;
-	private int repeatCount;
-	private ArrayList<Var> vars;
-	private boolean ignore;
+    private String text;
+    private String name;
+    private double startX;
+    private double startY;
+    private double endX;
+    private double endY;
+    private int duration;
+    private int keyCode;
+    private int elementIndex;
+    private int fingers;
+    private int repeatCount;
+    private ArrayList<Var> vars;
+    private boolean ignore;
 
-	public boolean isIgnore() {
-		return ignore;
-	}
+    public Action() {
+    }
 
-	public void setIgnore(boolean ignore) {
-		this.ignore = ignore;
-	}
+    public boolean isIgnore() {
+        return ignore;
+    }
 
-	public ArrayList<Var> getVars() {
-		return vars;
-	}
+    public void setIgnore(boolean ignore) {
+        this.ignore = ignore;
+    }
 
-	public void setVars(ArrayList<Var> vars) {
-		this.vars = vars;
-	}
+    public ArrayList<Var> getVars() {
+        return vars;
+    }
 
-	public int getRepeatCount() {
-		return repeatCount;
-	}
+    public void setVars(ArrayList<Var> vars) {
+        this.vars = vars;
+    }
 
-	public void setRepeatCount(int repeatCount) {
-		this.repeatCount = repeatCount;
-	}
+    public int getRepeatCount() {
+        return repeatCount;
+    }
 
-	public int getFingers() {
-		return fingers;
-	}
+    public void setRepeatCount(int repeatCount) {
+        this.repeatCount = repeatCount;
+    }
 
-	public void setFingers(int fingers) {
-		this.fingers = fingers;
-	}
+    public int getFingers() {
+        return fingers;
+    }
 
-	public int getElementIndex() {
-		return elementIndex;
-	}
+    public void setFingers(int fingers) {
+        this.fingers = fingers;
+    }
 
-	public void setElementIndex(int elementIndex) {
-		this.elementIndex = elementIndex;
-	}
+    public int getElementIndex() {
+        return elementIndex;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public void setElementIndex(int elementIndex) {
+        this.elementIndex = elementIndex;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
+    public String getText() {
+        return text;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setText(String text) {
+        this.text = text;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public double getStartX()
-	{
-		return  startX;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setStartX(double startX)
-	{
-		this.startX = startX;
-	}
+    public double getStartX() {
+        return startX;
+    }
 
-	public double getStartY()
-	{
-		return startY;
-	}
+    public void setStartX(double startX) {
+        this.startX = startX;
+    }
 
-	public void setStartY(double startY)
-	{
-		this.startY = startY;
-	}
+    public double getStartY() {
+        return startY;
+    }
 
-	public double getEndX()
-	{
-		return endX;
-	}
+    public void setStartY(double startY) {
+        this.startY = startY;
+    }
 
-	public void setEndX(double endX)
-	{
-		this.endX = endX;
-	}
+    public double getEndX() {
+        return endX;
+    }
 
-	public double getEndY()
-	{
-		return endY;
-	}
+    public void setEndX(double endX) {
+        this.endX = endX;
+    }
 
-	public void setEndY(double endY)
-	{
-		this.endY = endY;
-	}
+    public double getEndY() {
+        return endY;
+    }
 
-	public int getDuration()
-	{
-		return duration;
-	}
+    public void setEndY(double endY) {
+        this.endY = endY;
+    }
 
-	public void setDuration(int duration)
-	{
-		this.duration = duration;
-	}
+    public int getDuration() {
+        return duration;
+    }
 
-	public int getKeyCode()
-	{
-		return keyCode;
-	}
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 
-	public void setKeyCode(int keyCode)
-	{
-		this.keyCode = keyCode;
-	}
+    public int getKeyCode() {
+        return keyCode;
+    }
 
-	public Action(){}
+    public void setKeyCode(int keyCode) {
+        this.keyCode = keyCode;
+    }
 }

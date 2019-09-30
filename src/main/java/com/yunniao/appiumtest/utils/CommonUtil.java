@@ -11,28 +11,21 @@ import java.util.HashMap;
  * Created by melinda on 1/14/16.
  */
 public class CommonUtil {
-    public static boolean isExist(String str)    {
-        if (str != null && str.trim().length() != 0) {
-            return true;
-        }
-        return false;
+    public static boolean isExist(String str) {
+        return str != null && str.trim().length() != 0;
     }
 
 
-
-
-    public static int getSleepCount(int sleepCount)
-    {
-        if(sleepCount > 0) {
+    public static int getSleepCount(int sleepCount) {
+        if (sleepCount > 0) {
             return sleepCount;
         }
 
         return Global.SleepCount;
     }
 
-    public static int getDefaultCount(int type, int count)
-    {
-        if(count > 0) {
+    public static int getDefaultCount(int type, int count) {
+        if (count > 0) {
             return count;
         }
 
@@ -51,11 +44,9 @@ public class CommonUtil {
     }
 
 
-    public static String getTextMatchName(int matchType)
-    {
+    public static String getTextMatchName(int matchType) {
         String matchTypeName;
-        switch (matchType)
-        {
+        switch (matchType) {
             case Constants.TEXT_MATCH_TYPE_STARTSWITH:
                 matchTypeName = Constants.TEXT_MATCH_TYPE_NAME_STARTSWITH;
                 break;
@@ -67,62 +58,61 @@ public class CommonUtil {
                 matchTypeName = Constants.TEXT_MATCH_TYPE_NAME_CONTAINS;
                 break;
         }
-        return  matchTypeName;
+        return matchTypeName;
     }
 
-    public static HashMap<String,  String> getOsInfo(String os, String pr)
-    {
+    public static HashMap<String, String> getOsInfo(String os, String pr) {
         HashMap<String, String> stringHashMap = new HashMap<String, String>();
         String deviceName = null;
         String osName = null;
         String platformVersion = null;
         String appFile = null;
-        String packageName=null;
-        String activityName=null;
+        String packageName = null;
+        String activityName = null;
         String loginActivityName = null;
         String appPath = null;
         String platformVersionSimulator = null;
         String deviceNameSimulator = null;
-        if((Constants.OS_ANDROID).equalsIgnoreCase(os)) {
+        if ((Constants.OS_ANDROID).equalsIgnoreCase(os)) {
             deviceName = Constants.DEVICE_ANDROID_NAME;
             osName = Constants.OS_ANDROID;
             platformVersion = Constants.PLATFORM_VERSION_ANDROID;
-            if(("customer").equalsIgnoreCase(pr)) {
+            if (("customer").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_CUSTOMER_ANDROID;
                 packageName = Constants.PACKAGE_CUSTOMER;
                 activityName = Constants.PACKAGE_CUSTOMER_ACTIVITY;
                 loginActivityName = Constants.PACKAGE_CUSTOMER_LOGIN_ACTIVITY;
-            } else if(("xiazai").equalsIgnoreCase(pr)) {
+            } else if (("xiazai").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_XIAZAI_ANDROID;
                 packageName = Constants.PACKAGE_XIAZAI;
                 activityName = Constants.PACKAGE_XIAZAI_ACTIVITY;
-            } else if(("driver").equalsIgnoreCase(pr)) {
+            } else if (("driver").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_S_ANDROID;
                 packageName = Constants.PACKAGE_S;
                 activityName = Constants.PACKAGE_S_ACTIVITY;
                 loginActivityName = Constants.PACKAGE_DRIVER_LOGIN_ACTIVITY;
-            } else if(("y").equalsIgnoreCase(pr)) {
+            } else if (("y").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_Y_ANDROID;
                 packageName = Constants.PACKAGE_Y;
                 activityName = Constants.PACKAGE_Y_ACTIVITY;
                 loginActivityName = Constants.PACKAGE_Y_LOGIN_ACTIVITY;
-            } else if(("f").equalsIgnoreCase(pr)) {
+            } else if (("f").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_F_ANDROID;
                 packageName = Constants.PACKAGE_F;
                 activityName = Constants.PACKAGE_F_ACTIVITY;
                 loginActivityName = Constants.PACKAGE_F_LOGIN_ACTIVITY;
             }
-        } else if((Constants.OS_IOS).equalsIgnoreCase(os)) {
+        } else if ((Constants.OS_IOS).equalsIgnoreCase(os)) {
             deviceName = Constants.DEVICE_IOS_NAME;
             deviceNameSimulator = Constants.DEVICE_IOS_NAME_SIMULATOR;
             osName = Constants.OS_IOS;
             platformVersion = Constants.PLATFORM_VERSION_IOS;
             platformVersionSimulator = Constants.PLATFORM_VERSION_IOS_SIMULATOR;
-            if(("customer").equalsIgnoreCase(pr)) {
+            if (("customer").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_CUSTOMER_IOS;
                 packageName = Constants.PACKAGE_CUSTOMER_IOS;
                 appPath = Constants.APP_PATH_CUSTOMER_IOS;
-            } else if(("driver").equalsIgnoreCase(pr)) {
+            } else if (("driver").equalsIgnoreCase(pr)) {
                 appFile = Constants.APP_FILE_S_IOS;
                 packageName = Constants.PACKAGE_S_IOS;
                 appPath = Constants.APP_PAHT_DRIVER_IOS;
@@ -143,11 +133,9 @@ public class CommonUtil {
         return stringHashMap;
     }
 
-    public static String getTextTypeName(String os, int $textType)
-    {
+    public static String getTextTypeName(String os, int $textType) {
         String textName = null;
-        switch ($textType)
-        {
+        switch ($textType) {
             case 1:
                 textName = Constants.IOS_ELEMENT_TEXT_TYPE_NAME;
                 break;
@@ -162,7 +150,7 @@ public class CommonUtil {
                 break;
             case 3:
             default:
-                if((Constants.OS_ANDROID).equalsIgnoreCase(os)) {
+                if ((Constants.OS_ANDROID).equalsIgnoreCase(os)) {
                     textName = Constants.ANDROID_ELEMENT_TEXT_TYPE_TEXT;
                 } else {
                     textName = Constants.IOS_ELEMENT_TEXT_TYPE_LABEL;
@@ -174,7 +162,7 @@ public class CommonUtil {
 
     public static String zipReport() {
         String reportName = KeyValueUtil.get(Constants.REPORT_NAME);
-        File file = new File( "report/" + reportName);
+        File file = new File("report/" + reportName);
         String sourceFilePath = file.getAbsolutePath();
 
         String zipFilePath = "/var/tmp/";
@@ -187,10 +175,10 @@ public class CommonUtil {
 
         String logName = KeyValueUtil.get("logName");
         String sourceFilePathNew = zipFilePath + "/../../automated_test_report/" + logName + "_" + reportName;
-        ZipCompressor zc = new  ZipCompressor(sourceFilePathNew + ".zip");
+        ZipCompressor zc = new ZipCompressor(sourceFilePathNew + ".zip");
         zc.compressExe(sourceFilePath);
 
-        return  "";
+        return "";
     }
 
     public static void scpZip() {

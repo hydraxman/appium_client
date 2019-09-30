@@ -3,6 +3,7 @@ package com.yunniao.appiumtest.utils;
 import com.yunniao.appiumtest.ClientStarter;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,7 +33,7 @@ public class ErrorLogUtil {
     }
 
     private static void printToConsole(String msg) {
-        if (ClientStarter.instance != null && ClientStarter.instance.inWindowMode) {
+        if (ClientStarter.instance != null && ClientStarter.inWindowMode) {
             ClientStarter.instance.log(msg);
         } else {
             System.out.println(msg);
@@ -47,13 +48,9 @@ public class ErrorLogUtil {
     private static String exception2Str(Exception e) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         PrintWriter writer = new PrintWriter(out);
-        try {
-            e.printStackTrace(writer);
-            writer.flush();
-            return new String(out.toByteArray(), "UTF-8");
-        } catch (UnsupportedEncodingException e1) {
-            return "";
-        }
+        e.printStackTrace(writer);
+        writer.flush();
+        return new String(out.toByteArray(), StandardCharsets.UTF_8);
     }
 
     public static void e(String msg) {
@@ -81,27 +78,27 @@ public class ErrorLogUtil {
     }
 
     static synchronized void startFileLog() throws Exception {
-        if(running ){
+        if (running) {
             return;
         }
         String dateTime = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date(
                 System.currentTimeMillis()));
         File logDir = new File("log").getAbsoluteFile();
         if (!logDir.exists()) {
-            if(logDir.mkdir()){
+            if (logDir.mkdir()) {
                 printToConsole("log文件夹创建成功-error");
             }
         }
-        File f = new File(logDir,"error" + dateTime+".txt").getAbsoluteFile();
+        File f = new File(logDir, "error" + dateTime + ".txt").getAbsoluteFile();
         if (!f.exists()) {
-            if(f.createNewFile()){
+            if (f.createNewFile()) {
                 printToConsole("log文件创建成功-error");
-            }else{
+            } else {
                 throw new Exception("文件创建失败-error");
             }
         }
         br = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f),
-                "UTF-8"));
+                StandardCharsets.UTF_8));
 
         running = true;
     }

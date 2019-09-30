@@ -1,8 +1,7 @@
 package com.yunniao.appiumtest.bean;
+
 import com.alibaba.fastjson.JSONObject;
 import com.yunniao.appiumtest.Constants;
-
-import java.util.Map;
 
 /**
  * Created by melinda on 3/11/16.

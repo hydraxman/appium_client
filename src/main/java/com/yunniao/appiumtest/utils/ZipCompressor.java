@@ -18,6 +18,7 @@ public class ZipCompressor {
 
     /**
      * 压缩文件构造函数
+     *
      * @param pathName 压缩的文件存放目录
      */
     public ZipCompressor(String pathName) {
@@ -26,16 +27,17 @@ public class ZipCompressor {
 
     /**
      * 执行压缩操作
+     *
      * @param srcPathName 被压缩的文件/文件夹
      */
     public void compressExe(String srcPathName) {
         File file = new File(srcPathName);
-        if (!file.exists()){
+        if (!file.exists()) {
             throw new RuntimeException(srcPathName + "不存在！");
         }
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(zipFile);
-            CheckedOutputStream cos = new CheckedOutputStream(fileOutputStream,new CRC32());
+            CheckedOutputStream cos = new CheckedOutputStream(fileOutputStream, new CRC32());
             ZipOutputStream out = new ZipOutputStream(cos);
             String basedir = "";
             compressByType(file, out, basedir);
@@ -49,6 +51,7 @@ public class ZipCompressor {
 
     /**
      * 判断是目录还是文件，根据类型（文件/文件夹）执行不同的压缩方法
+     *
      * @param file
      * @param out
      * @param basedir
@@ -66,12 +69,13 @@ public class ZipCompressor {
 
     /**
      * 压缩一个目录
+     *
      * @param dir
      * @param out
      * @param basedir
      */
     private void compressDirectory(File dir, ZipOutputStream out, String basedir) {
-        if (!dir.exists()){
+        if (!dir.exists()) {
             return;
         }
 
@@ -84,6 +88,7 @@ public class ZipCompressor {
 
     /**
      * 压缩一个文件
+     *
      * @param file
      * @param out
      * @param basedir
@@ -97,7 +102,7 @@ public class ZipCompressor {
             ZipEntry entry = new ZipEntry(basedir + file.getName());
             out.putNextEntry(entry);
             int count;
-            byte data[] = new byte[BUFFER];
+            byte[] data = new byte[BUFFER];
             while ((count = bis.read(data, 0, BUFFER)) != -1) {
                 out.write(data, 0, count);
             }
